@@ -1,0 +1,559 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+    line-height: 64px; /*chiều cao content */
+    color: #222;
+}
+
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+
+h3 {
+    font-size: 20px;
+    color: #222;
+}
+
+h4 {
+    font-size: 14px;
+}
+
+p {
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+button.normal {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+
+button.white {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 11px 18px;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+    /* border-radius: 4px; */
+    cursor: pointer;
+    /* border: none; */
+    outline: none;
+    transition: 0.2s;
+}
+                                        /* HEADER SECTION */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background-color: #e3e6f3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* #header a { */
+    /* padding: 0 80px;
+    /* padding đúng phần tử mà mình cần,
+    ở trường hợp padding header mình làm dày phần khung sườn mà không ảnh hưởng tới từng phần tử con a */
+/* }    */
+
+#navbar {
+    display: flex;
+    /* list-style: none; */
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none; 
+    /* Trỏ đúng thẻ, nếu chỉ chỏ vào navbar thì tag li cần css sẽ mang thuộc tính kế thừa từ navbar,
+    dẫn đến dễ bị nhầm lẫn khi css   */
+    padding: 0 20px;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #1a1a1a;
+    font-weight: 600;
+    /* transition: 0.5s ease; */
+    position: relative;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #088178;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 40%;
+    height: 3px;
+    position: absolute;
+    background-color: #088178;
+    left: 1px;
+    bottom: -4px;
+    /* psuedo class bắt buộc phải có attribute content và position */
+}
+/* Tại sao 1 cái home hiện thanh
+hover và trỏ vào active
+hover vào after */
+#navbar a i {
+    color: #1a1a1a;
+    font-size: 20px;
+}
+                                        /* HOME SECTION */
+#home {
+    background-image: url(img/hero4.png);
+    height: 100vh;
+    background-position: top 15% right 0;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 80px;
+}
+
+#home h1 {
+    color: #088178;
+}
+
+#home button {
+    background-image: url(img/button.png);
+    background-color: transparent;
+    /* Trong suốt phần khung */
+    width: 230px;
+    /* phần width phải đủ chiều dài cho phần đã padding trái phải 80 + 65 + độ dài content */
+    background-repeat: no-repeat;
+    padding: 14px 80px 14px 65px;
+    border: none;
+    color: #088178;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* 1.Khác nhau giữa justify-content và justify item
+2. background-position back-ground image*/
+
+                                        /* FEATURES SECTION */
+#features {
+    display: flex;
+    padding: 40px 80px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.featureContent {
+    /* width: 100px; */
+    padding: 20px 30px;
+    /* padding phần content sẽ đảm bảo nội dung nằm trong width của tag features (width = 100%) */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    margin: 20px 20px;
+    border: 1px solid #e3e6f3;
+}
+
+.featureContent:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.featureContent img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.featureContent h4 {
+    color: #088178;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 10px;
+    background-color: #fddde4;
+    border-radius: 4px;
+    width: 70%;
+    /* display: inline-block; */
+    /* line-height: 1; */
+    margin: 0 auto;
+}
+
+.featureContent:nth-child(2) h4 {
+    background-color: #cdebbc;
+}
+.featureConten:nth-child(3) h4 {
+    background-color: #d1e8f2;
+}
+.featureContent:nth-child(4) h4 {
+    background-color: #cdd4f8;
+}
+.featureContent:nth-child(5) h4 {
+    background-color: #f6dbf6;
+}
+.featureContent:nth-child(6) h4 {
+    background-color: #fff2e5;
+}
+
+                                        /* PRODUCTS SECTION */
+#products {
+    /* display: flex; */
+    padding: 40px 80px;
+    text-align: center;
+}
+
+#products #pro-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+#products .pro-Item {
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.2);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+}
+
+#products .pro-Item:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.6);
+}
+
+#products .pro-Item img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+#products .pro-Item .des {
+    text-align: start;
+    padding: 10px 0;
+}
+
+#products .pro-Item .des span {
+    font-size: 12px;
+    color: #606063;
+}
+
+#products .pro-Item .des h3 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+#products .pro-Item .des i {
+    font-size: 12px;
+    color: rgb(238, 238, 22);
+}
+
+#products .pro-Item .des h4 {
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #088178;
+}
+
+#products .pro-Item .cart {
+    width: 40px;
+    height: 40px;
+    color:#088178;
+    line-height: 40px;
+    background-color: #e8f6ea;
+    border-radius: 50px;
+    border: 1px solid #cce7d0;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+                                        /* BANNER SECTION */
+#banner {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(img/banner/b2.jpg);
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#banner h3 {
+    color: #fff;
+    font-size: 16px;
+}
+
+#banner h2 {
+    color: #fff;
+    font-size: 30px;
+    padding: 10px 0;
+}
+
+#banner h2 span {
+    color: #ef3636;
+}
+
+#banner button:hover {
+    color: white;
+    background-color: #088178;
+}
+                                        /* SMALL BANNER SECTION */
+#sm-banner {
+    padding: 40px 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#sm-banner .banner-box {
+    /* copy từ banner */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    background-image: url(img/banner/b17.jpg);
+    min-width: 48%;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+}
+
+#sm-banner .banner-box2 {
+    background-image: url(img/banner/b10.jpg);
+}
+
+#sm-banner .banner-box h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+#sm-banner .banner-box h2 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+#sm-banner .banner-box span {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+
+#sm-banner .banner-box:hover button {
+    /* hover vào banner-box nhưng thay đổi là button */
+    background-color: #088178;
+    border: 1px solid #088178;
+    color: white;
+}
+
+#banner3 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 80px;
+}
+
+#banner3 .banner-box {
+    /* copy từ banner */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    background-image: url(img/banner/b7.jpg);
+    min-width: 30%;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#banner3 .banner-box2 {
+    background-image: url(img/banner/b4.jpg);
+}
+#banner3 .banner-box3 {
+    background-image: url(img/banner/b18.jpg);
+}
+
+
+#banner3 .banner-box h2 {
+    color: #fff;
+    font-weight: 900;
+    font-size: 22px;
+}
+
+#banner3 .banner-box h3 {
+    color: #ec544e;
+    font-weight: 800;
+    font-size: 15px;
+}
+                                        /* NEWSLETTER SECTION */
+#newsLetter {
+    display: flex;
+    padding: 40px 80px;
+    margin: 20px 0;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(img/banner/b2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% 30%;
+}
+
+#newsLetter .newsText h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+}
+
+#newsLetter .newsText p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #818ea0;
+}
+
+#newsLetter .newsText p span {
+    color: rgb(194, 128, 52);
+}
+
+#newsLetter .email-input {
+    display: flex;
+    width: 40%;
+}
+
+#newsLetter .email-input input {
+    height: 3.125rem;
+    font-size: 14px;
+    padding: 0 1.25em;
+    width: 80%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#newsLetter .email-input button {
+    background-color: #088178;
+    color: white;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+                                        /* FOOTER SECTION */
+#footer {
+    padding: 40px 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#footer .col {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+}
+
+#footer .col1 img {
+    width: 50%;
+    /* margin-bottom: 20px; */
+}
+
+#footer .col h3 {
+    font-size: 20px;
+    margin: 20px 0 25px 0;
+}
+
+#footer .col p {
+    font-size: 15px;
+    margin: 0 0 8px 0;
+}
+
+#footer .follow i {
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+#footer .col a {
+    font-size: 15px;
+    margin: 0 0 8px 0;
+    text-decoration: none;
+    color:rgb(70, 81, 92);
+}
+
+#footer .col a:hover,
+#footer .follow i:hover {
+    color: #088178;
+    cursor: pointer;
+}
+
+#footer .col .row img {
+    padding: 5px 10px;
+    border: 1px solid #088178;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+#footer .col > img {
+    width: 60%;
+    margin: 10px 0;
+}
+
+#footer .copyright {
+    width: 100%;
+    text-align: center;
+}
+
+                                        /* RESPONSIVE SECTION */
+@media (max-width:799px) {
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 300px;
+        background-color: #e3e6f3;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+    }
+
+    #navbar li {
+        margin-bottom: 25px;
+    }
+}
+    
+
+
